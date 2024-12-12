@@ -9,7 +9,7 @@ function Hero() {
   }, []);
 
   return (
-    <section id="home" className="hero">
+    <section id="home" className="hero hhhhhh">
       <div className="container">
         <div className="row align-items-center">
           <div className="col-8" id="description">
