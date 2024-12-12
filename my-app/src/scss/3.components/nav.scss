@@ -1,0 +1,117 @@
+/* Navbar container */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0; /* Creates space on the left and right */
+    background-color: transparent;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Adds a soft shadow for depth */
+}
+
+/* Navbar brand/logo (if any) */
+.navbar-brand {
+    font-family: 'SF Pro Display', sans-serif; /* Apple's system font */
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #989898;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Navbar items container */
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* Navigation links */
+.nav-link {
+    color: #949494;
+    font-family: 'SF Pro Display', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    margin-left: 30px; /* Space between links */
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    transition: color 0.3s ease, transform 0.3s ease; /* Smooth color and transform transition */
+
+    &:hover {
+        color: #ffffff; /* Apple’s blue color */
+        transform: scale(1.1); /* Slight scale effect for hover */
+    }
+}
+
+/* Navigation links active state */
+.nav-link.active {
+    color: #0071e3; /* Active link color */
+    font-weight: 600;
+}
+
+/* Burger menu icon for mobile */
+.btnToggler {
+    border: none;
+    background: transparent;
+    color: #333;
+    font-size: 24px;
+    padding: 8px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: #0071e3; /* Apple blue on hover */
+    }
+
+    &:focus {
+        outline: none; /* Removes focus outline */
+    }
+}
+
+/* Icon styling (e.g., in menu items or buttons) */
+.bi {
+    color: #333;
+    transition: color 0.3s ease, transform 0.3s ease;
+    cursor: pointer; /* Makes icon clickable */
+
+    &:hover {
+        color: #0071e3; /* Change to Apple's blue */
+        transform: scale(1.1); /* Slight scale effect on hover */
+    }
+}
+
+/* Additional responsiveness for mobile */
+@media (max-width: 768px) {
+    .navbar-nav {
+        display: none; /* Hide navbar links on mobile */
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        position: absolute;
+        top: 80px; /* Below the navbar */
+        left: 0;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-nav.active {
+        display: flex; /* Show navbar links when toggled */
+    }
+
+    .nav-link {
+        margin-left: 0;
+        margin-bottom: 15px; /* Vertical spacing between links */
+        font-size: 16px;
+    }
+
+    .btnToggler {
+        color: #333;
+        font-size: 28px;
+    }
+
+}

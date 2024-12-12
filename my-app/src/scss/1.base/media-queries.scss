@@ -1,0 +1,20 @@
+/* Media query for smaller devices */
+@media (max-width: 800px) {
+    .offcanvas-start {
+        width: 100%; /* Take full width on smaller devices */
+        height: auto;
+        position: static; /* Remove fixed positioning */
+        display: block; /* Change to block display */
+    }
+
+    .offcanvas-end {
+        width: 100%; /* Take full width on smaller devices */
+        height: auto;
+        position: static; /* Remove fixed positioning */
+        top: auto; /* Remove top positioning */
+        bottom: auto; /* Remove bottom positioning */
+        right: auto; /* Remove right positioning */
+        display: block; /* Change to block display */
+        margin-top: 20px; /* Add margin for spacing */
+    }
+}

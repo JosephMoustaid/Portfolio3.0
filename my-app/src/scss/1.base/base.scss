@@ -1,0 +1,40 @@
+/* Global styles */
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    max-width: 1400px;
+    margin: auto;
+    height: 100%;
+    margin: 0;
+    background: black;
+}
+
+.mt-10{
+    margin-top: 15%;
+}
+.blue{
+    color: #007aff;
+}
+main{
+    image{
+        border-radius: 20px;
+    }
+}
+
+.cyan-link{
+    color: #a8b2d1 !important;
+    cursor: pointer !important;
+  }
+  .cyan-link:hover{
+    position: relative;
+    color: #64ffda !important;      
+  }
+  .cyan-link .bi{
+    color: #6d6d6d !important;
+  }
+  .cyan-link .bi:hover{
+    color: #64ffda !important;      
+    transform: translateY(-5px);
+  }

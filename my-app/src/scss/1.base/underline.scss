@@ -1,0 +1,38 @@
+.underline-orange {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px; /* Adjust this value to control the distance of the "underline" from the text */
+        left: 0;
+        width: 100%;
+        border-bottom: 8px solid rgb(255, 135, 15); /* Change this to your desired underline color */
+    }
+}
+
+.underline-blue {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px; /* Adjust this value to control the distance of the "underline" from the text */
+        left: 0;
+        width: 100%;
+        border-bottom: 8px solid rgb(15, 247, 255); /* Change this to your desired underline color */
+    }
+}
+
+.underline-purple {
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -2px; /* Adjust this value to control the distance of the "underline" from the text */
+        left: 0;
+        width: 100%;
+        border-bottom: 8px solid rgb(147, 15, 255); /* Change this to your desired underline color */
+    }
+}

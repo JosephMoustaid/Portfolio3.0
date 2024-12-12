@@ -1,0 +1,77 @@
+#skills-section {
+    margin-top: 8%;
+    .skills-title {
+      margin-bottom: 40px;
+      h2 {
+        font-size: 2.5rem;
+        color: #fff;
+      }
+    }
+  
+    .tech-card {
+      background: #1e1e2e;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-radius: 12px;
+        box-shadow: 0 0 20px #6FFFC8, 0 0 40px #6FFFC8, 0 0 60px #6FFFC8, 0 0 80px #6FFFC8;
+        animation: glow 2s infinite;
+        z-index: -1;
+      }
+  
+      &:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+  
+      .tech-icon {
+        height: 100px;
+        width: 100px;
+        margin: 20px auto;
+        display: block;
+      }
+  
+      .card-body {
+        text-align: center;
+        color: #ccc;
+  
+        .card-title {
+          font-size: 1.5rem;
+          margin-bottom: 10px;
+        }
+  
+        .card-text {
+          font-size: 1rem;
+          margin-bottom: 10px;
+          
+        }
+  
+        .text-muted {
+          color: #dbdbdbdd;
+        }
+      }
+    }
+  
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 20px #6FFFC8, 0 0 40px #6FFFC8, 0 0 60px #6FFFC8, 0 0 80px #6FFFC8;
+      }
+      50% {
+        box-shadow: 0 0 40px #6FFFC8, 0 0 60px #6FFFC8, 0 0 80px #6FFFC8, 0 0 100px #6FFFC8;
+      }
+      100% {
+        box-shadow: 0 0 20px #6FFFC8, 0 0 40px #6FFFC8, 0 0 60px #6FFFC8, 0 0 80px #6FFFC8;
+      }
+    }
+  }

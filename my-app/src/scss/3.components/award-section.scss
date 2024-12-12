@@ -1,0 +1,64 @@
+.award-section {
+    padding: 80px 0;
+  
+    .sec-title {
+      font-weight: 600;
+      text-align: center;
+      color: #d7d7d7; // Dark grey for readability
+      margin-bottom: 20px;
+      text-transform: uppercase; // Clean, modern feel
+      letter-spacing: 1px;
+      line-height: 1.2;
+  
+      @media (max-width: 768px) {
+        font-size: 2.4rem;
+      }
+    }
+    h2 , p{
+        color: white !important;
+    }
+    .award-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      
+      .text-content {
+        flex: 1;
+        margin-right: 20px; // Space between text and image
+        p {
+          font-size: 1rem;
+          color: #eaeaea; // Lighter grey for readability
+          line-height: 1.6;
+        }
+      }
+  
+      .image {
+        flex: 0 0 300px; // Fixed image size
+        img {
+          width: 100%;
+          border-radius: 12px;
+          box-shadow: 0 4px 10px rgba(79, 79, 79, 0.1);
+          transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+          &:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+          }
+        }
+      }
+    }
+    
+    .award-helper {
+      margin-top: 40px;
+      text-align: center;
+      color: #d7d7d7;
+  
+      img {
+        width: 100%;
+        border-radius: 30px;
+        padding-top: 15px;
+      }
+    }
+}
+  

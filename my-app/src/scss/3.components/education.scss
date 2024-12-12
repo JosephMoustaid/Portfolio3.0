@@ -1,0 +1,97 @@
+.education-section {
+  padding: 40px 0;
+
+
+  .sec-title {
+    font-weight: 600;
+    text-align: center;
+    color: #d7d7d7; // Dark grey color, ensuring good readability
+    margin-bottom: 30px;
+    text-transform: uppercase; // Clean, modern feel
+    letter-spacing: 1px;
+    line-height: 1.2;
+
+    @media (max-width: 768px) {
+      font-size: 2.4rem;
+    }
+  }
+  .sec-title--helper {
+    font-size: large;
+    color: #dededea8;
+  }
+
+  .timeline {
+    position: relative;
+    margin: 0 auto;
+    max-width: 700px; /* Reduced container width */
+    padding-left: 15px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 17px; /* Aligns with the center of the dots */
+      bottom: 0;
+      width: 2px;
+      background-color: hsl(0, 0%, 100%); /* Line color */
+      z-index: 0; /* Ensure the line is behind the dots */
+    }
+
+    .timeline-item {
+      display: flex;
+      align-items: flex-start;
+      position: relative;
+      margin-bottom: 20px; /* Smaller spacing between items */
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+
+      .timeline-dot {
+        position: absolute;
+        left: 11px; /* Centers the dot on the timeline */
+        width: 12px; /* Smaller dot size */
+        height: 12px;
+        background-color: #d1dbd5;
+        border-radius: 50%;
+        border: 3px solid white; /* Thinner border for a smaller dot */
+        z-index: 1;
+        box-shadow: 0 0 4px rgba(165, 165, 165, 0.2);
+      }
+
+      .timeline-content {
+        margin-left: 35px; /* Adjusted spacing */
+        border: 1px solid white;
+        color: white;
+        border-radius: 15px; /* Smaller radius for a compact look */
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        padding: 15px; /* Smaller padding inside the content box */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+        &:hover {
+          transform: translateY(-3px); /* Reduced hover effect */
+          box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .year {
+          font-size: 0.7rem; /* Smaller year font */
+          font-weight: 600;
+          margin-bottom: 8px;
+        }
+
+        .degree {
+          font-size: 1rem; /* Reduced degree font size */
+          font-weight: 700;
+          color: #dedede;
+          margin-bottom: 8px;
+        }
+
+        .description {
+          font-size: 0.7rem; /* Smaller description font */
+          color: #f0f0f0;
+          line-height: 1.4; /* Reduced line height */
+        }
+      }
+    }
+  }
+}

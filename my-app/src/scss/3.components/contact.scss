@@ -1,0 +1,119 @@
+.contact-section {
+  padding: 80px 0;
+
+  .sec-title {
+    font-weight: 600;
+    text-align: center;
+    color: #d7d7d7; // Dark grey color, ensuring good readability
+    margin-bottom: 10px;
+    text-transform: uppercase; // Clean, modern feel
+    letter-spacing: 1px;
+    line-height: 1.2;
+
+    @media (max-width: 768px) {
+      font-size: 2.4rem;
+    }
+  }
+
+  .contact-form {
+    max-width: 500px; // Reduced max-width
+    margin: 0 auto;
+    padding: 20px; // Reduced padding
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(79, 79, 79, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+
+      label {
+        font-size: 0.9rem; // Reduced font size
+        color: #afafaf;
+        font-weight: 500;
+        display: block;
+        margin-bottom: 10px;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px; // Reduced padding
+        font-size: 0.9rem; // Reduced font size
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        color: white;
+        outline: none;
+        transition: all 0.3s ease;
+        background-color: inherit;
+
+        &:focus {
+          border-color: #007aff; // Apple blue highlight on focus
+        }
+      }
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 20px; // Reduced padding
+      background-color: white; // Apple blue color
+      color: black;
+      font-size: 1rem; // Reduced font size
+      font-weight: 500;
+      border-radius: 30px;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: black; // Darker blue on hover
+        color: white;
+        border: 1px solid white;
+      }
+
+      &:active {
+        background-color: black;
+        transform: translateY(1px);
+        border: 1px solid white;
+      }
+    }
+  }
+
+  .contact-info {
+    margin-top: 50px;
+    text-align: center;
+    color: #eaeaea;
+
+    p {
+      font-size: 1rem;
+      color: #e8e8e8; // Light grey text for less emphasis
+
+      a {
+        color: #007aff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: #005bb5; // Darker blue on hover
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  .contact-helper {
+    margin: 0 auto;
+    padding: 20px; // Reduced padding
+    color: #d7d7d7; // Dark grey color, ensuring good readability
+    max-width: 500px; // Reduced max-width to match the form
+    img {
+      width: 100%;
+      border-radius: 30px;
+      padding-top: 15px;
+    }
+  }
+}

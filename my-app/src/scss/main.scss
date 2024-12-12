@@ -1,0 +1,38 @@
+
+@use '../../node_modules/bootstrap/scss/bootstrap';
+
+
+
+@use './1.base/base';
+@use './1.base/animations';
+@use './1.base/typography';
+@use './1.base/scrollbar';
+@use './1.base/home';
+@use './1.base/tech';
+@use './1.base/underline';
+@use './1.base/media-queries';
+
+
+@import './3.components/nav.scss';
+@import './3.components/footer.scss';
+@import './3.components/cursor.scss';
+@import './3.components/skills.scss';
+@import './3.components/techStack.scss';
+@import './3.components/projects.scss';
+@import './3.components/contact.scss';
+@import './3.components/about-me.scss';
+@import './3.components/education.scss';
+@import './3.components/award-section.scss';
+@import './3.components/hero.scss';
+
+@import './3.components/blogCard.scss';
+@import './3.components/hero-animation.scss';
+
+@import './4.layout/morphing-background.scss';
+
+@import './5.pages/project.scss';
+@import './5.pages/blog.scss';
+
+@import './7.vendor/sparks.scss';
+@import './7.vendor/custom-cursor.scss';
+@import './7.vendor/animtations.scss';

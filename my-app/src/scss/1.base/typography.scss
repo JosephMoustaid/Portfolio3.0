@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'GTWalsheimPro-Black';
+    src: url('../assets/font/GTWalsheimPro-Black.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'SFProDisplay-BlackItalic';
+    src: url('../assets/font/SFPRODISPLAYBLACKITALIC.OTF') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'SFProDisplay-Bold';
+    src: url('../assets/font/SFPRODISPLAYBOLD.OTF') format('opentype');
+    font-weight: bold;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'SFProDisplay-HeavyItalic';
+    src: url('../assets/font/SFPRODISPLAYHEAVYITALIC.OTF') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'SFProDisplay-LightItalic';
+    src: url('../assets/font/SFPRODISPLAYLIGHTITALIC.OTF') format('opentype');
+    font-weight: normal;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'SFProDisplay-Medium';
+    src: url('../assets/font/SFPRODISPLAYMEDIUM.OTF') format('opentype');
+    font-weight: medium;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'SFProDisplay-Regular';
+    src: url('../assets/font/SFPRODISPLAYREGULAR.OTF') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'SFProDisplay-SemiBoldItalic';
+    src: url('../assets/font/SFPRODISPLAYSEMIBOLDITALIC.OTF') format('opentype');
+    font-weight: semi-bold;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'SFProDisplay-ThinItalic';
+    src: url('../assets/font/SFPRODISPLAYTHINITALIC.OTF') format('opentype');
+    font-weight: thin;
+    font-style: italic;
+  }
+  
+  @font-face {
+    font-family: 'SFProDisplay-UltraLightItalic';
+    src: url('../assets/font/SFPRODISPLAYULTRALIGHTITALIC.OTF') format('opentype');
+    font-weight: ultra-light;
+    font-style: italic;
+  }
+  
+  /* Example usage */
+  body {
+    font-family: 'SFProDisplay-Regular', sans-serif;
+  }
+  
+  h1 {
+    font-family: 'GTWalsheimPro-Black', sans-serif;
+  }
+  
+  h2 {
+    font-family: 'SFProDisplay-Bold', sans-serif;
+  }
+  
+  h3 {
+    font-family: 'SFProDisplay-SemiBoldItalic', sans-serif;
+  }
+  
+  p {
+    font-family: 'SFProDisplay-LightItalic', sans-serif;
+  }
+
+
+#home {
+    color: azure;
+    font-size: 25px;
+    box-sizing: border-box;
+}
+
+.home__titles--tiltle{
+    font-size: 65px;
+    color: white;
+    background: linear-gradient(45deg, #8a8988, #ffffff);
+      background-clip: text;
+      -webkit-background-clip: text; /* For older browsers */
+     color: transparent;
+    text-transform: uppercase;
+}
+.sec-title {
+    font-size: 48px;
+    color: #CCCCCC;
+}
+
+.info {
+  color: rgba(240, 255, 255, 0.823);
+  :hover{
+    color: white;
+  }
+}

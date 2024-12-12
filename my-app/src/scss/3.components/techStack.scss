@@ -1,0 +1,133 @@
+#techStack {
+
+  .sec-title, .sec-title__helper {
+    color: #fff;
+  }
+  .sec-title__helper{
+    font-size: medium;
+  }
+
+
+
+  .tech-card {
+    background: inherit;  // Dark background like a code editor
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 20px;  
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-body {
+      text-align: left;
+      padding: 0; // Remove padding around the content
+      .code-container {
+        height: 100%;
+        background: #2a2a2a; // Dark background like code editors
+        border-radius: 8px;
+        padding: 15px;
+        position: relative;
+        border: 1px solid #444; // Border for the code block
+
+        .code-header {
+          display: flex;
+          justify-content: flex-start;
+          margin-bottom: 10px;
+
+          .dot {
+            height: 12px;
+            width: 12px;
+            border-radius: 50%;
+            margin-right: 5px;
+          }
+
+          .red {
+            background-color: #ff5f56;
+          }
+
+          .yellow {
+            background-color: #ffbd2e;
+          }
+
+          .green {
+            background-color: #27c93f;
+          }
+        }
+
+        .code-text {
+          font-family: 'Courier New', Courier, monospace; // Code-like font
+          font-size: .8rem;
+          color: #d3d3d3; // Light gray color for code text
+          white-space: pre-wrap; // Ensure it wraps nicely
+          word-wrap: break-word; // Break long words if necessary
+
+          .comment {
+            color: #8dff88; // Green color for comments
+          }
+
+          .keyword {
+            color: #c792ea; // Purple color for keywords
+          }
+
+          .variable {
+            color: #82aaff; // Blue color for variables
+          }
+
+          .type {
+            color: #ffcb6b; // Yellow color for types
+          }
+
+          .string {
+            color: #ecc48d; // Light yellow color for strings
+          }
+        }
+      }
+    }
+  }
+
+  .card-title {
+    color: white;
+    font-weight: 500;
+    font-size: large;
+    position: relative;
+    cursor: pointer;
+    display: inline-block; 
+    text-align: start;
+    margin-top: 70px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 3px;
+      background: currentColor;
+      transition: width 0.3s ease;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
+
+  .card-title-1 {
+    color: #ff5f56;
+  }
+
+  .card-title-2 {
+    color: #ffbd2e;
+  }
+
+  .card-title-3 {
+    color: #27c93f;
+  }
+}
