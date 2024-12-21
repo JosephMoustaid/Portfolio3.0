@@ -71,7 +71,7 @@ function Footer() {
           </div>
 
           {/* Resources Section */}
-          <div className="col-12 col-md-3">
+          <div className="col-6 col-md-3">
             <ul className="list-inline">
               <li>
                 <h4 className="sec-title about__titles--tiltle">Resources</h4>
@@ -87,7 +87,7 @@ function Footer() {
           </div>
 
           {/* Policy Section */}
-          <div className="col-12 col-md-3">
+          <div className="col-6 col-md-3">
             <ul className="list-inline">
               <li>
                 <h4 className="sec-title about__titles--tiltle">Policy</h4>

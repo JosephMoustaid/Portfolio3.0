@@ -17,7 +17,7 @@ function Home() {
 
   return (
     <div>
-      <MorphingBackground  style={{zIndex:"0"}}/>
+      <MorphingBackground  style={{zIndex:"jpg0"}}/>
       <CustomCursor />
 
       <div className="fixed-left">
@@ -74,7 +74,6 @@ function Home() {
           <TechStack />
           <Projects />
           <Education />
-          <AwardSection />
           <Contact />
         </main>
         <Footer />

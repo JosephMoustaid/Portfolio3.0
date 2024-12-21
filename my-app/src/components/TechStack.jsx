@@ -1,4 +1,7 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import{ useState, useRef } from 'react';
+import useInView from '../hooks/useInView'; // Custom hook to detect visibility
 
 function TechStack() {
   const techStacks = [
@@ -15,12 +18,18 @@ function TechStack() {
       description: `// Managed couple of databases related to customer analytics: Data analysis, Data Prep & Visualisation, SQL, no SQL, MS Power BI;`,
     }
   ];
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, 0.2); // Track visibility
 
   return (
+   <motion.section
+      ref={sectionRef}
+      className={`contact-section section-animation ${isInView ? 'visible' : ''}`} // Add class dynamically
+    >
     <section id="techStack" className="w-75 m-auto text-center">
       <div className="medium-spacing">
-        <h2 className="home__titles sec-title about__titles--tiltle scroll ">My Expertise.</h2>
-        <h4 className="home__titles sec-title__helper scroll mb-2 ">Technologies I have been working with recently</h4>
+        <motion.h2 className="home__titles sec-title about__titles--tiltle scroll ">My Expertise.</motion.h2>
+        <motion.h4 className="home__titles sec-title__helper scroll mb-2 ">Technologies I have been working with recently</motion.h4>
         <div className="row medium-spacing ">
           {techStacks.map((stack, index) => (
             <div className="col-12 col-sm-12 col-md-4 mt-5" key={index}>
@@ -49,6 +58,7 @@ function TechStack() {
         </div>
       </div>
     </section>
+    </motion.section>
   );
 }
 

@@ -10,7 +10,7 @@ const OneBlogCard = ({ title, description, image, link, publishTime }) => {
         <p className="blog-card-description">{description}</p>
         <div className="d-flex justify-content-between">
           <p className="blog-card-time py-1">{publishTime}</p>
-          <a href={link} className="blog-card-link py-1" target="_blank" rel="noopener noreferrer">
+          <a href={link} className="blog-card-link py-1" rel="noopener noreferrer" style={{ position: 'relative' , zIndex:"1"}}>
             Read More <span>&rarr;</span>
           </a>
         </div>

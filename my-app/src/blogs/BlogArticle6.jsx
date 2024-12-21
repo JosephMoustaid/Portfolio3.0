@@ -1,5 +1,7 @@
 import React from "react";
 
+import natureandinnovation from "../assets/blogImages/natureandinnovation.jpg";
+
 const BlogArticle6 = () => {
   const handleShare = (platform) => {
     const url = encodeURIComponent(window.location.href);
@@ -19,14 +21,27 @@ const BlogArticle6 = () => {
   return (
     <div className="container py-5">
       <header className="mb-5">
-        <h1 className="fw-bold text-primary display-4">
-          Lessons from Nature: What It Teaches Us About Innovation
-        </h1>
-        <p className="text-muted">Published on: November 17, 2024</p>
-        <p className="lead">
-          From the efficiency of ecosystems to the resilience of forests, 
-          nature offers endless inspiration for innovation.
-        </p>
+
+        <div className="row align-items-center">
+          <div className="col-lg-7">
+            <h1 className="fw-bold text-primary display-4">
+            Lessons from Nature: What It Teaches Us About Innovation
+            </h1>
+            <p className="text-muted">Published on: November 17, 2024</p>
+            <p className="lead">
+            From the efficiency of ecosystems to the resilience of forests, 
+            nature offers endless inspiration for innovation.
+            </p>
+          </div>
+          <div className="col-lg-5 text-center">
+            <img
+            style={{ position: 'relative' , zIndex:"1"}}
+              src={natureandinnovation}
+              alt="nature and innovation"
+              className="img-fluid rounded shadow"
+            />
+          </div>
+        </div>
       </header>
 
       <article>
@@ -49,7 +64,7 @@ const BlogArticle6 = () => {
         </p>
       </article>
 
-      <section className="text-center mt-5">
+      <section className="text-center mt-5" style={{ position: 'relative' , zIndex:"1"}}>
         <h4>Share this article:</h4>
         <button onClick={() => handleShare("twitter")} className="btn btn-primary me-2">Twitter</button>
         <button onClick={() => handleShare("facebook")} className="btn btn-primary me-2">Facebook</button>

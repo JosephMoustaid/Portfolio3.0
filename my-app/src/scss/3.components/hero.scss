@@ -3,4 +3,33 @@
     .home__titles--tiltle{
         font-size: 100px;
     }
+
+    .type-container{
+      color: white;
+      background: linear-gradient(45deg, #8a8988, #ffffff);
+        background-clip: text;
+        -webkit-background-clip: text; /* For older browsers */
+       color: transparent;
+      text-transform: uppercase;
+    }
 }
+
+
+@keyframes popIn {
+    0% {
+      transform: scale(0.8);
+      opacity: 0;
+    }
+    50% {
+      transform: scale(1.2);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .jaw-dropping {
+    animation: popIn 1.2s ease-out, gradientAnimation 3s infinite;
+  }
+  

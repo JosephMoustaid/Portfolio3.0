@@ -1,5 +1,7 @@
 import React from "react";
 
+import minimalism from "../assets/blogImages/minimalism.jpg";
+
 const BlogArticle3 = () => {
   const handleShare = (platform) => {
     const url = encodeURIComponent(window.location.href);
@@ -19,12 +21,28 @@ const BlogArticle3 = () => {
   return (
     <div className="container py-5">
         <header className="mb-5">
-            <h1 className="fw-bold text-primary display-4">Why Minimalism Matters</h1>
+
+        <div className="row align-items-center">
+          <div className="col-lg-7">
+            <h1 className="fw-bold text-primary display-4">
+            Why Minimalism Matters
+                        </h1>
             <p className="text-muted">Published on: November 17, 2024</p>
             <p className="lead">
             In a world of endless options, choosing less can lead to more clarity, 
             purpose, and happiness.
             </p>
+          </div>
+          <div className="col-lg-5 text-center">
+            <img
+              style={{ position: 'relative' , zIndex:"1"}}
+              src={minimalism}
+              alt="Minimalism"
+              className="img-fluid rounded shadow"
+            />
+          </div>
+        </div>
+
         </header>
 
         <article>
@@ -92,7 +110,7 @@ const BlogArticle3 = () => {
             </p>
         </article>
 
-        <section className="text-center mt-5">
+        <section className="text-center mt-5" style={{ position: 'relative' , zIndex:"1"}}>
             <h4>Share this article:</h4>
             <button
             onClick={() => handleShare("twitter")}

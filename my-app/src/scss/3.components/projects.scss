@@ -129,6 +129,7 @@
     list-style: none;
     position: relative;
     border-radius: 30px;
+    --bs-card-bg: inherit !important;
   }
   
   .card:before{
@@ -237,7 +238,40 @@
   }
   
   .card-grid:hover > .card:not(:hover) .card__background{
-    filter: brightness(0.5) saturate(0) contrast(1.2) blur(30px);
+    filter: brightness(0.5) saturate(0.6) contrast(1.2) blur(10px);
     border-color: transparent;
+    border: none;
+    box-shadow: none;
   }
+
+
+
+
+  /* SCSS styles */
+.section-animation {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+
+  &.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card__content {
+  padding: 20px;
+}
+
 }

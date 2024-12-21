@@ -1,4 +1,7 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import{ useState, useRef } from 'react';
+import useInView from '../hooks/useInView'; // Custom hook to detect visibility
 
 function Skills() {
   const techStacks = [
@@ -38,13 +41,22 @@ function Skills() {
       utility: 'CI/CD, containerization, orchestration',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'
     }
+
+    
   ];
 
+  const sectionRef = useRef(null);
+  const isInView = useInView(sectionRef, 0.2); // Track visibility
+
   return (
+   <motion.section
+      ref={sectionRef}
+      className={`contact-section section-animation ${isInView ? 'visible' : ''}`} // Add class dynamically
+    >
     <section id="skills-section" className="skills-section">
       <div className="container">
         <div className="skills-title text-center section-title">
-          <h2>Skills</h2>
+          <motion.h2 className="sec-title">Skills</motion.h2>
         </div>
         <div className="row">
           {techStacks.map((stack, index) => (
@@ -62,6 +74,7 @@ function Skills() {
         </div>
       </div>
     </section>
+    </motion.section>
   );
 }
 

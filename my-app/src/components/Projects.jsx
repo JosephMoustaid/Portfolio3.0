@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import portfolio1 from '../assets/images/portfolio1.png';
 import ecom from '../assets/images/E-com.png';
 import chatbot from '../assets/images/chatbot.png';
@@ -103,38 +103,78 @@ function Projects() {
     }
   ];
 
+  const [visibleCards, setVisibleCards] = useState(new Set());
+  const sectionRef = useRef(null);
+
+  const handleScroll = () => {
+    const section = sectionRef.current;
+    if (section) {
+      const { top, bottom } = section.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      if (top < windowHeight * 0.8 && bottom > 0) {
+        section.classList.add('visible');
+      }
+    }
+
+    document.querySelectorAll('.card').forEach((card) => {
+      const { top, bottom } = card.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+
+      if (top < windowHeight * 0.9 && bottom > 0) {
+        setVisibleCards((prev) => new Set([...prev, card.id]));
+      }
+    });
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Initial check
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
-    <section id="projects" className="text-center large-spacing content mt-10">
-      <h2 className="sec-title about__titles--tiltle text-center">Projects.</h2>
-      <h5 className="sec-title__helper text-center ">Things I've built so far</h5>
-      <div>
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" />
-        <section className="projects-section">
-          <div className="card-grid">
-            {projects.map((project) => (
-              <div className="card scroll card-shadow" id={project.id} key={project.id}>
-                <div className="card__background" style={{ backgroundImage: `url(${project.image})` }}></div>
-                <div className="card__content">
-                  <h3 className="card__category">{project.title}</h3>
-                  <h4 className="card__heading-helper">Tech Stack: {project.techStack}</h4>
-                  <div className="card__heading-helper card_link">
-                    <a href={project.projectLink} target="_blank" rel="noopener noreferrer">
-                      <i className="bi bi-box-arrow-up-right"></i>
-                    </a>
-                  </div>
-                  <div className="card__heading-helper card_link">
-                    <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                      <i className="bi bi-github"></i>
-                    </a>
-                  </div>
+    <section ref={sectionRef} id="projects" className="section-animation text-center mt-10">
+      <h2 className="sec-title about__titles--title">Projects.</h2>
+      <h5 className="sec-title__helper">Things I've built so far</h5>
+      <div className="projects-section">
+        <div className="card-grid">
+          {projects.map((project) => (
+            <div
+              className={`card scroll card-shadow ${
+                visibleCards.has(project.id) ? 'visible' : ''
+              }`}
+              id={project.id}
+              key={project.id}
+            >
+              <div
+                className="card__background"
+                style={{ backgroundImage: `url(${project.image})` }}
+              ></div>
+              <div className="card__content">
+                <h3 className="card__category">{project.title}</h3>
+                <h4 className="card__heading-helper">Tech Stack: {project.techStack}</h4>
+                <div className="card__heading-helper card_link">
+                  <a href={project.projectLink} target="_blank" rel="noopener noreferrer">
+                    <i className="bi bi-box-arrow-up-right"></i>
+                  </a>
+                </div>
+                <div className="card__heading-helper card_link">
+                  <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
+                    <i className="bi bi-github"></i>
+                  </a>
                 </div>
               </div>
-            ))}
-          </div>
-        </section>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
 }
 
 export default Projects;
+
+
+
+

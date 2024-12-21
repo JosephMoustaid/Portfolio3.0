@@ -12619,6 +12619,9 @@ nav {
   color: #27c93f;
 }
 
+#projects {
+  /* SCSS styles */
+}
 #projects .projects-section {
   text-align: start;
   border: 0;
@@ -12746,6 +12749,7 @@ nav {
   list-style: none;
   position: relative;
   border-radius: 30px;
+  --bs-card-bg: inherit !important;
 }
 #projects .card:before {
   content: "";
@@ -12838,8 +12842,31 @@ nav {
   transform: scale(1.05) translateZ(0);
 }
 #projects .card-grid:hover > .card:not(:hover) .card__background {
-  filter: brightness(0.5) saturate(0) contrast(1.2) blur(30px);
+  filter: brightness(0.5) saturate(0.6) contrast(1.2) blur(10px);
   border-color: transparent;
+  border: none;
+  box-shadow: none;
+}
+#projects .section-animation {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+#projects .section-animation.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+#projects .card {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+#projects .card.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+#projects .card__content {
+  padding: 20px;
 }
 
 .contact-section {
@@ -13131,6 +13158,31 @@ nav {
 .hero .home__titles--tiltle {
   font-size: 100px;
 }
+.hero .type-container {
+  color: white;
+  background: linear-gradient(45deg, #8a8988, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text; /* For older browsers */
+  color: transparent;
+  text-transform: uppercase;
+}
+
+@keyframes popIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.jaw-dropping {
+  animation: popIn 1.2s ease-out, gradientAnimation 3s infinite;
+}
 
 .blog-card {
   background: #1e1e2e;
@@ -13399,6 +13451,11 @@ html .project-body .offcanvas {
   background: linear-gradient(180deg, #000000, #0a192f);
   scrollbar-width: none;
 }
+html .project-body .offcanvas .nextProject, html .project-body .offcanvas .goBack, html .project-body .offcanvas .lastProject {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
 html .project-body .offcanvas-start {
   width: 75%; /* 75% width for the left section */
   height: 100vh;
@@ -13458,6 +13515,7 @@ html .project-body .scrolling-images img {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 html .project-body .custom-button {
+  border: 1px solid white;
   display: inline-block;
   padding: 10px 30px;
   margin-top: 20px;
@@ -13472,9 +13530,21 @@ html .project-body .custom-button {
   box-shadow: 0 10px 20px rgba(21, 147, 227, 0.4), 0 20px 40px rgba(89, 24, 223, 0.2);
 }
 html .project-body .custom-button:hover {
-  transform: scale(1.05);
+  transform: scale(1.2);
   background-position: 100% 0;
   box-shadow: 0 15px 30px rgba(21, 147, 227, 0.5), 0 25px 50px rgba(89, 24, 223, 0.3);
+}
+html .project-body .nextProject, html .project-body .lastProject {
+  box-shadow: none;
+  font-size: 13px;
+  background: none;
+  border: none;
+  padding: 0;
+  color: blue !important;
+}
+html .project-body .nextProject:hover, html .project-body .lastProject:hover {
+  box-shadow: none;
+  transform: scale(1.01);
 }
 html .project-body #goBack {
   display: inline;
@@ -13509,6 +13579,7 @@ html .project-body .tech-stack {
 }
 
 .blog {
+  z-index: 500;
   color: white;
 }
 
@@ -13631,6 +13702,14 @@ html .project-body .tech-stack {
 }
 .full-blog .comments-section .submit-comment-btn:hover {
   background-color: darkred;
+}
+
+.single-blog-page p, .single-blog-page ol, .single-blog-page ul {
+  font-size: 18px;
+  line-height: 1.8;
+}
+.single-blog-page li {
+  line-height: 2.1;
 }
 
 @keyframes glowing {

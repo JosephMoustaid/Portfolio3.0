@@ -1,5 +1,9 @@
 import React from "react";
 
+
+import frustration from "../assets/blogImages/frustration.jpg";
+
+
 const BlogArticle2 = () => {
   const handleShare = (platform) => {
     const url = encodeURIComponent(window.location.href);
@@ -19,15 +23,29 @@ const BlogArticle2 = () => {
   return (
     <div className="container py-5">
       <header className="mb-5">
-        <h1 className="fw-bold text-primary display-4">
-          Embracing Failure as a Path to Growth
-        </h1>
-        <p className="text-muted">Published on: November 17, 2024</p>
-        <p className="lead">
-          Failure isn’t the opposite of success—it’s part of the journey. Here’s 
-          why I believe we should celebrate our failures.
-        </p>
+        <div className="row align-items-center">
+          <div className="col-lg-7">
+            <h1 className="fw-bold text-primary display-4">
+            Embracing Failure as a Path to Growth
+            </h1>
+            <p className="text-muted">Published on: November 17, 2024</p>
+            <p className="lead">
+            Failure isn’t the opposite of success—it’s part of the journey. Here’s 
+            why I believe we should celebrate our failures.
+            </p>
+          </div>
+          <div className="col-lg-5 text-center">
+            <img 
+              style={{ position: 'relative' , zIndex:"1"}}
+              src={frustration}
+              alt="Thinking about AI"
+              className="img-fluid rounded shadow"
+            />
+          </div>
+        </div>
       </header>
+      
+
 
       <article>
         <h2 className="text-primary mb-4">Rethinking Failure</h2>
@@ -84,7 +102,7 @@ const BlogArticle2 = () => {
         </p>
       </article>
 
-      <section className="text-center mt-5">
+      <section className="text-center mt-5" style={{ position: 'relative' , zIndex:"1"}}>
         <h4>Share this article:</h4>
         <button onClick={() => handleShare("twitter")} className="btn btn-primary me-2">
           Twitter

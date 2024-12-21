@@ -9,6 +9,9 @@ import BlogArticle4 from '../blogs/BlogArticle4';
 import BlogArticle5 from '../blogs/BlogArticle5';
 import BlogArticle6 from '../blogs/BlogArticle6';
 
+import MorphingBackground from '../effects/MorphingBackground';
+import CustomCursor from '../utilities/CustomCursor';
+
 function SingleBlog() {
   const { blogId } = useParams();
 
@@ -31,8 +34,10 @@ function SingleBlog() {
 
   return (
     <div>
+      <MorphingBackground  style={{zIndex:"0"}}/>
+      <CustomCursor />
       <Nav />
-      <main className="blog container mt-5">{SelectedBlog}</main>
+      <main className="blog container mt-5 single-blog-page">{SelectedBlog}</main>
       <Footer />
     </div>
   );

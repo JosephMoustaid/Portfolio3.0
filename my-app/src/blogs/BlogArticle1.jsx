@@ -120,7 +120,7 @@ const BlogArticle1 = () => {
       </article>
 
       {/* SOCIAL SHARING */}
-      <section className="text-center mt-5">
+      <section className="text-center mt-5" style={{ position: 'relative' , zIndex:"1"}}>
         <h4>Share this article:</h4>
         <button
           onClick={() => handleShare("twitter")}

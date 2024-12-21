@@ -1,15 +1,29 @@
 import React, { useState } from 'react';
-import Project from '../components/Project';
-import projectImg from '../assets/images/contact.avif'; // Example image path
-import CustomCursor from '../utilities/CustomCursor';
+import ProjectComponent from '../components/ProjectComponent';
 
+import CustomCursor from '../utilities/CustomCursor';
+import MorphingBackground from '../effects/MorphingBackground';
+
+import projectsData from "../projectsData/all";
+import { useLocation } from 'react-router-dom';  // For capturing the path
+
+import '../css/style.css'; 
 
 function Project() {
 
+  const location = useLocation();
+  
+  // Extract project name from the URL path (assuming project name is part of the path)
+  const projectName = location.pathname.split('/').pop(); // Adjust based on your URL structure
+  
+  // Get project data based on the project name
+  const projectData = projectsData[projectName];
 
   return (
-    <div>
+    <div className='project-body'>
+      <MorphingBackground  style={{zIndex:"0" }}/>
       <CustomCursor />
+
       <div id="loading-screen">
         <l-ring size="60" color="coral"></l-ring>
         <div className="logoContainer">
@@ -40,9 +54,15 @@ function Project() {
         </div>
       </div>
 
-      <Project />
+      <ProjectComponent 
+       title={projectData["title"]}
+       techStack={projectData["techStack"]}
+       description={projectData["description"]}
+       images={projectData["images"]}
+       githubLink={projectData["githubLink"]}
+      />
     </div>
   );
 }
 
-export default Blog;
+export default Project;
