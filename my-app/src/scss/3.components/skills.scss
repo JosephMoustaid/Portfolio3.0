@@ -8,6 +8,14 @@
       }
     }
   
+    @media (min-width:380px) and (max-width: 768px) {
+      padding-left: 50px;
+      padding-right: 50px;
+    }
+    @media(max-width: 379px) {
+      padding-left: 30px;
+      padding-right: 30px;
+    }
     .tech-card {
       background: #1e1e2e;
       border: none;

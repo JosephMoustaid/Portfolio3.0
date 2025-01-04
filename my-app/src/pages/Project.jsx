@@ -60,6 +60,9 @@ function Project() {
        description={projectData["description"]}
        images={projectData["images"]}
        githubLink={projectData["githubLink"]}
+       feautures = {projectData["feautures"] }
+       next = {projectData["next"]}
+       prev = {projectData["prev"]}
       />
     </div>
   );

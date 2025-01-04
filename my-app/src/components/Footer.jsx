@@ -4,11 +4,11 @@ import '../css/style.css'; // Ensure your SCSS is compiled into CSS and imported
 
 function Footer() {
   return (
-    <footer id="footer" className="bd-footer content h-50 mb-4">
+    <footer id="footer" className="bd-footer content h-50 ">
       <div className="container">
-        <div className="row" style={{ paddingTop: '50px' }}>
+        <div className="row px-5" style={{ paddingTop: '50px' }}>
           {/* Portfolio and Socials */}
-          <div className="col-12 col-md-6">
+          <div className="col-12 col-md-8">
             <ul className="list-inline">
               <li className="mb-3">
                 <h4 className="sec-title about__titles--tiltle">Portfolio</h4>
@@ -71,7 +71,7 @@ function Footer() {
           </div>
 
           {/* Resources Section */}
-          <div className="col-6 col-md-3">
+          <div className="col-6 col-md-4">
             <ul className="list-inline">
               <li>
                 <h4 className="sec-title about__titles--tiltle">Resources</h4>
@@ -86,16 +86,6 @@ function Footer() {
             </ul>
           </div>
 
-          {/* Policy Section */}
-          <div className="col-6 col-md-3">
-            <ul className="list-inline">
-              <li>
-                <h4 className="sec-title about__titles--tiltle">Policy</h4>
-              </li>
-              <li><a href="#About" className="info">Privacy</a></li>
-              <li><a href="#Services" className="info">Sitemap</a></li>
-            </ul>
-          </div>
         </div>
       </div>
       {/* Footer Bottom */}

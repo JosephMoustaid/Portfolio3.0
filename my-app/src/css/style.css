@@ -11850,11 +11850,15 @@ textarea.form-control-lg {
 }
 
 html, body {
-  max-width: 1400px;
   margin: auto;
+  width: 100%;
   height: 100%;
   margin: 0;
   background: black;
+}
+html #root, body #root {
+  max-width: 1400px;
+  margin: auto;
 }
 
 .mt-10 {
@@ -12114,6 +12118,11 @@ p {
 .fixed-left {
   left: 30px;
 }
+@media (max-width: 768px) {
+  .fixed-left {
+    left: 15px;
+  }
+}
 
 .fixed-left ul, .fixed-right ul {
   padding: 0;
@@ -12132,6 +12141,11 @@ p {
 
 .fixed-right {
   right: 30px;
+}
+@media (max-width: 768px) {
+  .fixed-right {
+    right: 15px;
+  }
 }
 
 .fixed-right ul {
@@ -12451,6 +12465,18 @@ nav {
   font-size: 2.5rem;
   color: #fff;
 }
+@media (min-width: 380px) and (max-width: 768px) {
+  #skills-section {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media (max-width: 379px) {
+  #skills-section {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
 #skills-section .tech-card {
   background: #1e1e2e;
   border: none;
@@ -12620,6 +12646,18 @@ nav {
 }
 
 #projects {
+  /*
+    "Yomo",
+    "Recipidea",
+    "goMacros", 
+    "ClubXtreme",
+    "pharmaIQ",
+    "Immerse",
+    "Gericht",
+    "ByteBurst",
+    "MyWeather", 
+    "ChatBot"
+  */
   /* SCSS styles */
 }
 #projects .projects-section {
@@ -12649,43 +12687,39 @@ nav {
   box-shadow: 0 0.8rem 1.4rem rgba(91, 125, 124, 0.15);
   border-radius: 25px;
 }
-#projects #portfolio1 {
-  grid-column: span 3;
-  grid-row: span 2;
+#projects #Yomo {
+  grid-column: span 4;
+  grid-row: span 4;
 }
-#projects #E-com {
-  grid-column: span 5;
-  grid-row: span 3;
-}
-#projects #chatBot {
+#projects #ChatBot {
   grid-column: span 3;
   grid-row: span 3;
 }
-#projects #Orders-manag {
-  grid-column: span 5;
-  grid-row: span 2;
-}
-#projects #Weather {
-  grid-column: span 2;
-  grid-row: span 2;
-}
-#projects #News {
-  grid-column: span 6;
+#projects #ClubXtreme {
+  grid-column: span 8;
   grid-row: span 3;
 }
-#projects #products {
-  grid-column: span 2;
-  grid-row: span 1;
+#projects #MyWeather {
+  grid-column: span 5;
+  grid-row: span 3;
 }
-#projects #gericht {
+#projects #ByteBurst {
   grid-column: span 4;
   grid-row: span 2;
 }
-#projects #recipeIdea {
+#projects #Gericht {
   grid-column: span 4;
   grid-row: span 2;
 }
-#projects #immerse {
+#projects #Recipidea {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+#projects #goMacros {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+#projects #Immerse {
   grid-column: span 8;
   grid-row: span 3;
   max-height: 450px;
@@ -12706,10 +12740,6 @@ nav {
   #projects .card-grid {
     grid-template-rows: 150px 150px 150px 150px 300px 150px 150px 150px 150px;
   }
-  #projects #portfolio1 {
-    grid-column: span 8;
-    grid-row: span 2;
-  }
   #projects #E-com {
     grid-column: span 5;
     grid-row: span 2;
@@ -12727,10 +12757,6 @@ nav {
     grid-row: span 1;
   }
   #projects #News {
-    grid-column: span 8;
-    grid-row: span 2;
-  }
-  #projects #products {
     grid-column: span 8;
     grid-row: span 2;
   }
@@ -12872,6 +12898,18 @@ nav {
 .contact-section {
   padding: 80px 0;
 }
+@media (min-width: 380px) and (max-width: 768px) {
+  .contact-section {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media (max-width: 379px) {
+  .contact-section {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
 .contact-section .sec-title {
   font-weight: 600;
   text-align: center;
@@ -13009,6 +13047,18 @@ nav {
 .education-section {
   padding: 40px 0;
 }
+@media (min-width: 380px) and (max-width: 768px) {
+  .education-section {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+}
+@media (max-width: 379px) {
+  .education-section {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
 .education-section .sec-title {
   font-weight: 600;
   text-align: center;
@@ -13042,6 +13092,7 @@ nav {
   width: 2px;
   background-color: hsl(0, 0%, 100%); /* Line color */
   z-index: 0; /* Ensure the line is behind the dots */
+  transform: translateX(14px);
 }
 .education-section .timeline .timeline-item {
   display: flex;
@@ -13057,7 +13108,7 @@ nav {
   left: 11px; /* Centers the dot on the timeline */
   width: 12px; /* Smaller dot size */
   height: 12px;
-  background-color: #d1dbd5;
+  background-color: #5d00fe;
   border-radius: 50%;
   border: 3px solid white; /* Thinner border for a smaller dot */
   z-index: 1;
@@ -13158,6 +13209,16 @@ nav {
 .hero .home__titles--tiltle {
   font-size: 100px;
 }
+@media (max-width: 379px) {
+  .hero .home__titles--tiltle {
+    font-size: 40px;
+  }
+}
+@media (min-width: 380px) and (max-width: 768px) {
+  .hero .home__titles--tiltle {
+    font-size: 70px;
+  }
+}
 .hero .type-container {
   color: white;
   background: linear-gradient(45deg, #8a8988, #ffffff);
@@ -13165,6 +13226,16 @@ nav {
   -webkit-background-clip: text; /* For older browsers */
   color: transparent;
   text-transform: uppercase;
+}
+@media (min-width: 380px) and (max-width: 768px) {
+  .hero .type-container {
+    font-size: 20px;
+  }
+}
+@media (max-width: 379px) {
+  .hero .type-container {
+    font-size: 14px;
+  }
 }
 
 @keyframes popIn {
@@ -13294,7 +13365,7 @@ nav {
   align-items: center;
   font-size: 96px;
   color: white;
-  opacity: 0.8;
+  opacity: 1;
   user-select: none;
   text-shadow: 1px 1px rgba(0, 0, 0, 0.1);
 }
@@ -13534,6 +13605,11 @@ html .project-body .custom-button:hover {
   background-position: 100% 0;
   box-shadow: 0 15px 30px rgba(21, 147, 227, 0.5), 0 25px 50px rgba(89, 24, 223, 0.3);
 }
+html .project-body .custom-button .github-visit“ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 html .project-body .nextProject, html .project-body .lastProject {
   box-shadow: none;
   font-size: 13px;
@@ -13581,6 +13657,9 @@ html .project-body .tech-stack {
 .blog {
   z-index: 500;
   color: white;
+}
+.blog p {
+  text-align: justify;
 }
 
 .text-muted {

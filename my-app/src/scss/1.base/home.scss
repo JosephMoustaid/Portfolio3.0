@@ -21,6 +21,9 @@
   .fixed-left {
     left: 30px;
     
+    @media (max-width: 768px) {
+      left : 15px;
+    }
   }
   
   .fixed-left ul, .fixed-right ul {
@@ -41,6 +44,9 @@
   
   .fixed-right {
     right: 30px;
+    @media (max-width: 768px) {
+      right : 15px;
+    }
   }
   .fixed-right ul {
     padding: 0;

@@ -26,53 +26,69 @@
     box-shadow: 0 .8rem 1.4rem rgba(91, 125, 124, 0.15);
     border-radius: 25px;
   }
-  #portfolio1 {
-    grid-column: span 3;
-    grid-row: span 2;
-  }
-  #E-com {
-    grid-column: span 5;
-    grid-row: span 3;
-  }
-  #chatBot {
-    grid-column: span 3;
-    grid-row: span 3;
-  }
-  #Orders-manag{
-    grid-column: span 5;
-    grid-row: span 2;
-  }
-  #Weather{
-    grid-column: span 2;
-    grid-row: span 2;
-  }
-  #News {
-    grid-column: span 6;
-    grid-row: span 3;
-  }
-  #products{
-    grid-column: span 2;
-    grid-row: span 1;
-  }
-  #gericht{
-    grid-column: span 4;
-    grid-row: span 2;
-  }
-  #recipeIdea{
-    grid-column: span 4;
-    grid-row: span 2;
-  }
-  #immerse{
-    grid-column: span 8;
-    grid-row: span 3;
-    max-height: 450px;
-  }
-  #pharmaIQ{
-    grid-column: span 8;
-    grid-row: span 3;
-    max-height: 450px;
-  }
+/*
+  "Yomo",
+  "Recipidea",
+  "goMacros", 
+  "ClubXtreme",
+  "pharmaIQ",
+  "Immerse",
+  "Gericht",
+  "ByteBurst",
+  "MyWeather", 
+  "ChatBot"
+*/
+#Yomo {
+  grid-column: span 4;
+  grid-row: span 4;
+}
 
+#ChatBot {
+  grid-column: span 3;
+  grid-row: span 3;
+}
+
+#ClubXtreme {
+  grid-column: span 8;
+  grid-row: span 3;
+}
+
+#MyWeather {
+  grid-column: span 5;
+  grid-row: span 3;
+}
+
+#ByteBurst {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+#Gericht {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+#Recipidea {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+#goMacros {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+#Immerse {
+  grid-column: span 8;
+  grid-row: span 3;
+  max-height: 450px;
+}
+
+#pharmaIQ {
+  grid-column: span 8;
+  grid-row: span 3;
+  max-height: 450px;
+}
   @media(max-width:599px){
     .card-grid{
       display: block;
@@ -83,10 +99,6 @@
   @media screen and (min-width:600px) and (max-width:900px){
     .card-grid{
       grid-template-rows: 150px 150px 150px 150px 300px 150px 150px 150px 150px;
-    }
-    #portfolio1 {
-      grid-column: span 8;
-      grid-row: span 2;
     }
     #E-com {
       grid-column: span 5;
@@ -105,10 +117,6 @@
       grid-row: span 1;
     }
     #News {
-      grid-column: span 8;
-      grid-row: span 2;
-    }
-    #products{
       grid-column: span 8;
       grid-row: span 2;
     }

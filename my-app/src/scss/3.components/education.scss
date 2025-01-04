@@ -1,6 +1,14 @@
 .education-section {
   padding: 40px 0;
 
+  @media (min-width:380px) and (max-width: 768px) {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  @media(max-width: 379px) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 
   .sec-title {
     font-weight: 600;
@@ -25,7 +33,7 @@
     margin: 0 auto;
     max-width: 700px; /* Reduced container width */
     padding-left: 15px;
-
+    
     &::before {
       content: '';
       position: absolute;
@@ -35,6 +43,7 @@
       width: 2px;
       background-color: hsl(0, 0%, 100%); /* Line color */
       z-index: 0; /* Ensure the line is behind the dots */
+      transform: translateX(14px);
     }
 
     .timeline-item {
@@ -52,7 +61,7 @@
         left: 11px; /* Centers the dot on the timeline */
         width: 12px; /* Smaller dot size */
         height: 12px;
-        background-color: #d1dbd5;
+        background-color: #5d00fe;
         border-radius: 50%;
         border: 3px solid white; /* Thinner border for a smaller dot */
         z-index: 1;

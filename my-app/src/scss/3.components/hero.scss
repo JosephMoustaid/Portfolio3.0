@@ -2,6 +2,12 @@
     margin-top: 15%;
     .home__titles--tiltle{
         font-size: 100px;
+        @media (max-width: 379px){
+          font-size: 40px;
+        }
+        @media (min-width: 380px) and (max-width: 768px){
+          font-size: 70px;
+        }
     }
 
     .type-container{
@@ -11,6 +17,13 @@
         -webkit-background-clip: text; /* For older browsers */
        color: transparent;
       text-transform: uppercase;
+
+      @media (min-width:380px) and (max-width: 768px) {
+        font-size: 20px;
+      }
+      @media(max-width: 379px) {
+         font-size: 14px;
+      }
     }
 }
 

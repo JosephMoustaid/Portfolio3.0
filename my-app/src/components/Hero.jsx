@@ -2,6 +2,7 @@ import HeroAnimation from './HeroAnimation';
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import {ReactTyped} from 'react-typed';
+import Scene from './Scene.jsx';
 
 function Hero() {
   useEffect(() => {
@@ -35,6 +36,7 @@ function Hero() {
               >
                 Moustaid Youssef.
               </motion.h1>
+              < Scene />
               <div className="type-container">
                 <ReactTyped
                   strings={[

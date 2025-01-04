@@ -7,15 +7,15 @@ function TechStack() {
   const techStacks = [
     {
       title: 'Software Development',
-      description: `// Experted in OOP along with UI libraries: Python, JAVA, JAVASCRIPT, PHP, C++ and C#;`,
+      description: `// Expert in OOP along with Design Patterns and Entreprise level Desktop apps development;`,
     },
     {
       title: 'Frontend Development',
-      description: `// With over 18 months of constant projects-based learning: HTML, CSS, JS, Bootstrap, Node.js, React.js, NPM terminal commands;`,
+      description: `// With over 3 years of constant projects-based learning: React, Sass, JS, Node.js, Express;`,
     },
     {
       title: 'Backend Development',
-      description: `// Managed couple of databases related to customer analytics: Data analysis, Data Prep & Visualisation, SQL, no SQL, MS Power BI;`,
+      description: `// Managed couple of databases related to customer analytics , along with Rest API's experience;`,
     }
   ];
   const sectionRef = useRef(null);
