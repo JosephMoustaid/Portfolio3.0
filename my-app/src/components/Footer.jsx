@@ -89,7 +89,7 @@ function Footer() {
         </div>
       </div>
       {/* Footer Bottom */}
-      <div className="grey-bg text-center w-100 py-2">
+      <div className="grey-bg rounded-top-2 text-center w-100 py-2">
         &copy; Copyright 2023. 
         <span>
           Developed by <span>Youssef Moustaid</span>. <br />

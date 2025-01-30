@@ -12478,10 +12478,9 @@ nav {
   }
 }
 #skills-section .tech-card {
-  background: #1e1e2e;
+  background: transparent;
   border: none;
   border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -12497,10 +12496,6 @@ nav {
   box-shadow: 0 0 20px #6FFFC8, 0 0 40px #6FFFC8, 0 0 60px #6FFFC8, 0 0 80px #6FFFC8;
   animation: glow 2s infinite;
   z-index: -1;
-}
-#skills-section .tech-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 #skills-section .tech-card .tech-icon {
   height: 100px;
@@ -12535,12 +12530,15 @@ nav {
   }
 }
 
-#techStack .sec-title, #techStack .sec-title__helper {
+.sec-title, .sec-title__helper {
   color: #fff;
 }
-#techStack .sec-title__helper {
+
+.sec-title__helper {
   font-size: medium;
+  color: white;
 }
+
 #techStack .tech-card {
   background: inherit;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -12658,6 +12656,7 @@ nav {
     "MyWeather", 
     "ChatBot"
   */
+  /* GitHub Icon Animation */
   /* SCSS styles */
 }
 #projects .projects-section {
@@ -12800,7 +12799,11 @@ nav {
 #projects .card:hover .card__background {
   transform: scale(1.05) translateZ(0);
 }
-#projects .card-grid:hover > .card:not(:hover) .card__background {
+#projects .card-grid:hover > .card:not(:hover) .card__background,
+#projects .card-grid:hover > .card:not(:hover) .card__heading,
+#projects .card-grid:hover > .card:not(:hover) .card__heading-helper,
+#projects .card-grid:hover > .card:not(:hover) .card_link,
+#projects .card-grid:hover > .card:not(:hover) .card__category {
   filter: brightness(0.5) saturate(0) contrast(1.2) blur(30px);
   border-color: transparent;
 }
@@ -12837,15 +12840,40 @@ nav {
 #projects .card a {
   color: inherit;
 }
+#projects .arrow-icon {
+  transition: transform 0.3s ease-in-out;
+  border: 1px solid black;
+  font-size: 35px;
+  border-radius: 50%;
+}
+#projects a:hover .arrow-icon {
+  transform: translateX(5px); /* Move the arrow to the right on hover */
+}
 #projects .card_link {
   margin-right: 10px;
   display: inline-block;
-  font-size: 25px;
+  font-size: 35px;
 }
 #projects .card_link i {
-  color: rgb(126, 255, 225);
+  color: black;
   border-radius: 50%;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+#projects .github-icon {
+  font-size: 35px; /* Adjust size as needed */
+  color: #333; /* Default color */
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+#projects .tech-stack-item {
+  padding: 6px 10px;
+  border-radius: 7px;
+  background-color: rgba(0, 0, 0, 0.7137254902);
+  color: white;
+  margin-right: 5px;
+}
+#projects a:hover .github-icon {
+  transform: scale(1.2); /* Scale up on hover */
+  color: #6e5494; /* GitHub's brand color */
 }
 @media (max-width: 800px) {
   #projects .card_link {
@@ -13353,6 +13381,36 @@ nav {
   }
 }
 
+.card-spotlight {
+  position: relative;
+  border-radius: 1.5rem;
+  border: 1px solid #222;
+  background-color: rgba(17, 17, 17, 0.537254902);
+  padding: 0px;
+  overflow: hidden;
+  --mouse-x: 50%;
+  --mouse-y: 50%;
+  --spotlight-color: rgba(255, 255, 255, 0.05);
+}
+
+.card-spotlight::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at var(--mouse-x) var(--mouse-y), var(--spotlight-color), transparent 80%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.card-spotlight:hover::before,
+.card-spotlight:focus-within::before {
+  opacity: 0.5;
+}
+
 .text-container {
   z-index: 100;
   width: 100vw;
@@ -13791,6 +13849,170 @@ html .project-body .tech-stack {
   line-height: 2.1;
 }
 
+/* Main Layout */
+.about-main-layout {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 100px);
+  flex-wrap: wrap; /* Allow wrapping of flex items */
+  /* Hero Section (Left Side) */
+  /* Dropdown Sections (Right Side) */
+}
+.about-main-layout .custom-button {
+  border: 1px solid white;
+  display: inline-block;
+  padding: 10px 30px;
+  margin-top: 20px;
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50px;
+  font-size: 14px;
+  background-size: 200%;
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-position 0.3s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  box-shadow: 0 10px 20px rgba(21, 147, 227, 0.4), 0 20px 40px rgba(89, 24, 223, 0.2);
+}
+.about-main-layout .custom-button:hover {
+  transform: scale(1.2);
+  background-position: 100% 0;
+  box-shadow: 0 15px 30px rgba(21, 147, 227, 0.5), 0 25px 50px rgba(89, 24, 223, 0.3);
+}
+.about-main-layout .custom-button .github-visit“ {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.about-main-layout .dropdown-section h1,
+.about-main-layout .dropdown-section h2,
+.about-main-layout .dropdown-section h3,
+.about-main-layout .dropdown-section h4,
+.about-main-layout .dropdown-section h5,
+.about-main-layout .dropdown-section h6 {
+  color: #ffffff !important;
+}
+.about-main-layout .dropdown-section p,
+.about-main-layout .dropdown-section li,
+.about-main-layout .dropdown-section ol,
+.about-main-layout .dropdown-section ul {
+  color: #ccc !important;
+  word-break: break-word; /* Ensure words break correctly */
+  overflow-wrap: break-word; /* Wrap overflowing text */
+  white-space: normal; /* Allow text to wrap */
+}
+.about-main-layout .dropdown-section p {
+  max-width: 100%; /* Ensure max width is 100% */
+  word-break: break-word; /* Force breaking of words */
+  overflow-wrap: break-word; /* Allow breaking of long words */
+}
+.about-main-layout .hero-section {
+  flex: 1;
+  max-width: 30%;
+  padding-right: 40px;
+}
+.about-main-layout .hero-section h1 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+.about-main-layout h1,
+.about-main-layout h2 {
+  color: white !important;
+}
+.about-main-layout p {
+  color: #ccc !important;
+}
+.about-main-layout .hero-section .tagline {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+.about-main-layout .dropdown-section {
+  border: 1px solid #444;
+  border-radius: 10px;
+  padding: 15px;
+  flex: 1;
+  max-width: 700%;
+}
+.about-main-layout .dropdown-item {
+  border-bottom: 1px solid #444;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.about-main-layout .dropdown-item h2 {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.5rem;
+  margin: 0;
+}
+.about-main-layout i {
+  color: white;
+}
+.about-main-layout .dropdown-item p {
+  margin-top: 10px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+.about-main-layout .dropdown-item h2:hover {
+  color: #007bff; /* Change color on hover */
+}
+
+@media (max-width: 768px) {
+  .about-main-layout {
+    flex-direction: column;
+  }
+  .about-main-layout .hero-section, .about-main-layout .dropdown-section {
+    max-width: 100%;
+    padding-right: 0;
+  }
+  /* Accordion Styles */
+  .accordion-item {
+    margin-bottom: 20px;
+    position: relative; /* Prevents overlap issues */
+    z-index: 10;
+    border-bottom: 1px solid #444;
+    padding-bottom: 10px;
+  }
+  .accordion-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 10px 0;
+    transition: color 0.3s ease;
+  }
+  .accordion-header:hover {
+    color: #007bff; /* Change color on hover */
+  }
+  .accordion-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+  }
+  .dropdown-item.open {
+    z-index: 10;
+  }
+  .accordion-content.open {
+    z-index: 10;
+    max-height: 500px; /* Adjust based on content */
+    opacity: 1;
+  }
+  .accordion-content p {
+    margin-top: 10px;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+  }
+}
 @keyframes glowing {
   0% {
     box-shadow: 0 0 10px rgba(255, 255, 255, 0.5), 0 0 30px rgba(255, 255, 255, 0.5), 0 0 60px rgba(255, 255, 255, 0.7);
@@ -13872,6 +14094,12 @@ body {
 .section-animation.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

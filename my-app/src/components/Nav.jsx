@@ -27,7 +27,7 @@ function Nav() {
         <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
           <ul className="navbar-nav ml-auto mb-lg-0 text-center text-md-end list-inline">
             <li className="nav-item px-md-1">
-              <a href="#home" className="nav-link  navLinks" aria-current="page">
+              <a href="" className="nav-link  navLinks" aria-current="page">
                 Home
               </a>
             </li>

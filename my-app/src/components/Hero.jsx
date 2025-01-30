@@ -1,7 +1,6 @@
-import HeroAnimation from './HeroAnimation';
 import React, { useEffect } from 'react';
 import { motion } from 'framer-motion';
-import {ReactTyped} from 'react-typed';
+import { ReactTyped } from 'react-typed';
 import Scene from './Scene.jsx';
 
 function Hero() {
@@ -23,32 +22,51 @@ function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, ease: 'easeOut' }}
             >
+              {/* Jaw-Dropping Title Animation */}
               <motion.h1
                 className="home__titles--tiltle jaw-dropping"
-                initial={{ x: 50, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
+                initial={{ scale: 0.5, opacity: 0, rotate: -20, y: 50 }}
+                animate={{ scale: 1, opacity: 1, rotate: 0, y: 0 }}
                 transition={{
                   type: 'spring',
-                  stiffness: 100,
-                  damping: 20,
-                  duration: 1.5,
+                  stiffness: 150,
+                  damping: 15,
+                  delay: 0.5,
+                }}
+                whileHover={{
+                  scale: 1.1,
+                  rotate: [0, -5, 5, -5, 0], // Slight wobble effect on hover
+                  textShadow: '0px 0px 20px rgba(255, 255, 255, 0.8)', // Glow effect
+                  transition: { duration: 0.5, ease: 'easeInOut' },
+                }}
+                style={{
+                  textShadow: '0px 0px 10px rgba(255, 255, 255, 0.5)', // Initial glow
                 }}
               >
                 Moustaid Youssef.
               </motion.h1>
-              < Scene />
-              <div className="type-container">
+
+              {/* Scene Component */}
+              <Scene />
+
+              {/* Typed Text Animation */}
+              <motion.div
+                className="type-container"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1, duration: 1, ease: 'easeOut' }}
+              >
                 <ReactTyped
                   strings={[
                     "I'm a software engineer...",
                     "I'm passionate about LLM models...",
-                    "I love building innovative solutions!"
+                    "I love building innovative solutions!",
                   ]}
                   typeSpeed={50}
                   backSpeed={30}
                   loop
                 />
-              </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>

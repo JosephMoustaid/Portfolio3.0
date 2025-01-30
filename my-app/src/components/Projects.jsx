@@ -50,23 +50,48 @@ function Projects() {
             >
               <div
                 className="card__background"
-                style={{ backgroundImage: `url(${project.images[0]})` }}
+
+                style={{ backgroundImage: `url(${project.images[0]})`, opacity : 0.8}}
               ></div>
               <div className="card__content">
                 <h3 className="card__category">{project.title}</h3>
-                <h4 className="card__heading-helper">Tech Stack: {' '}
+                <h4 className="card__heading-helper">Tech Stack: <br/> <br/> {' '}
                   {project.techStack.map((tech, index) => (
-                    <span key={index}>{tech}{index < project.techStack.length - 1 ? ', ' : ''}</span>
+                    <span className='tech-stack-item' key={index}>{tech}{index < project.techStack.length - 1 ? ' ' : ''}</span>
                   ))}
                 </h4>
                 <div className="card__heading-helper card_link">
                   <a href={"/project/" + project.title} rel="noopener noreferrer">
-                    <i className="bi bi-box-arrow-up-right"></i>
+                    {/* Custom Animated Arrow */}
+                    <svg
+                      className="arrow-icon"
+                      width="35"
+                      height="35"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 12H19"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M12 5L19 12L12 19"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
                   </a>
                 </div>
                 <div className="card__heading-helper card_link">
                   <a href={project.githubLink} target="_blank" rel="noopener noreferrer">
-                    <i className="bi bi-github"></i>
+                    {/* GitHub Icon with Animation */}
+                    <i className="bi bi-github github-icon"></i>
                   </a>
                 </div>
               </div>
@@ -79,7 +104,3 @@ function Projects() {
 }
 
 export default Projects;
-
-
-
-

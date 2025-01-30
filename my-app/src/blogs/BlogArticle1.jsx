@@ -1,5 +1,7 @@
 import React from "react";
-import ai from "../assets/images/ai.webp"
+import { motion } from "framer-motion";
+import ai from "../assets/images/ai.webp";
+
 const BlogArticle1 = () => {
   const handleShare = (platform) => {
     const url = encodeURIComponent(window.location.href);
@@ -17,33 +19,122 @@ const BlogArticle1 = () => {
   };
 
   return (
-    <div className="container py-5">
+    <motion.div
+      className="container py-5"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 1 }}
+    >
       {/* HEADER */}
-      <header className="mb-5">
+      <motion.header
+        className="mb-5"
+        initial={{ y: -50, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.8 }}
+      >
         <div className="row align-items-center">
           <div className="col-lg-7">
-            <h1 className="fw-bold text-primary display-4">
+            <motion.h1
+              className="fw-bold text-primary display-4"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 1 }}
+            >
               My Thoughts on Artificial Intelligence
-            </h1>
-            <p className="text-muted">Published on: November 17, 2024</p>
-            <p className="lead">
+            </motion.h1>
+            <motion.p
+              className="text-muted"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.5, duration: 1 }}
+            >
+              Published on: November 17, 2024
+            </motion.p>
+            <motion.p
+              className="lead"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 1, duration: 1 }}
+            >
               AI is everywhere, but where is it taking us? Here are my personal
               reflections on its power, challenges, and where I hope it will
               lead us.
-            </p>
+            </motion.p>
           </div>
-          <div className="col-lg-5 text-center">
+          <motion.div
+            className="col-lg-5 text-center"
+            initial={{ scale: 0.8, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            transition={{ duration: 1 }}
+          >
             <img
               src={ai}
               alt="Thinking about AI"
               className="img-fluid rounded shadow"
             />
-          </div>
+          </motion.div>
         </div>
-      </header>
+      </motion.header>
 
       {/* ARTICLE */}
-      <article>
+      <motion.article
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 0.5, duration: 1 }}
+      >
+        <div className="row mb-5">
+          <div className="col-12">
+            <motion.h2
+              className="text-primary"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              The Allure of AI
+            </motion.h2>
+            <motion.p
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 1 }}
+            >
+              Artificial Intelligence feels like a mirror held up to humanity.
+              It reflects our ambitions, creativity, and sometimes, our flaws.
+              To me, it’s both exciting and intimidating.
+            </motion.p>
+          </div>
+          <div className="col-12 mt-4">
+            <motion.h2
+              className="text-primary"
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8 }}
+            >
+              Challenges of the AI Era
+            </motion.h2>
+            <motion.p
+              initial={{ x: 100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.2, duration: 1 }}
+            >
+              With AI advancing at such a rapid pace, we face critical
+              challenges: ethical considerations, data privacy, and the
+              potential for job displacement. While it brings immense
+              opportunities, it also demands responsible development.
+            </motion.p>
+          </div>
+        </div>
+      </motion.article>
+
+
+
+
+      {/* ARTICLE */}
+      <motion.article
+       initial={{ opacity: 0 }}
+       animate={{ opacity: 1 }}
+       transition={{ delay: 1, duration: 1 }}
+      >
         <div className="row mb-5">
           <div className="col-12">
             <h2 className="text-primary">The Allure of AI</h2>
@@ -117,31 +208,48 @@ const BlogArticle1 = () => {
             </p>
           </div>
         </div>
-      </article>
+      </motion.article>
 
       {/* SOCIAL SHARING */}
-      <section className="text-center mt-5" style={{ position: 'relative' , zIndex:"1"}}>
-        <h4>Share this article:</h4>
-        <button
+      <motion.section
+        className="text-center mt-5"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.3, duration: 1 }}
+      >
+        <motion.h4
+          initial={{ scale: 0.8, opacity: 0 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ delay: 0.5, duration: 1 }}
+        >
+          Share this article:
+        </motion.h4>
+        <motion.button
           onClick={() => handleShare("twitter")}
           className="btn btn-primary me-2"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
         >
           Twitter
-        </button>
-        <button
+        </motion.button>
+        <motion.button
           onClick={() => handleShare("facebook")}
           className="btn btn-primary me-2"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
         >
           Facebook
-        </button>
-        <button
+        </motion.button>
+        <motion.button
           onClick={() => handleShare("linkedin")}
           className="btn btn-primary"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
         >
           LinkedIn
-        </button>
-      </section>
-    </div>
+        </motion.button>
+      </motion.section>
+    </motion.div>
   );
 };
 

@@ -11,6 +11,7 @@
     justify-content: center;
     padding: var(--spacing-xxl) var(--spacing-l);
     }
+
   .card-grid{
     margin: 0;
     padding: 0;
@@ -168,7 +169,11 @@
     transform: scale(1.05) translateZ(0);
   }
   
-  .card-grid:hover > .card:not(:hover) .card__background{
+  .card-grid:hover > .card:not(:hover) .card__background ,
+   .card-grid:hover > .card:not(:hover) .card__heading ,
+    .card-grid:hover > .card:not(:hover) .card__heading-helper ,
+     .card-grid:hover > .card:not(:hover) .card_link ,
+   .card-grid:hover > .card:not(:hover) .card__category {
     filter: brightness(0.5) saturate(0) contrast(1.2) blur(30px);
     border-color: transparent;
   }
@@ -210,16 +215,43 @@
       color: inherit;
     }
 }
+.arrow-icon {
+  transition: transform 0.3s ease-in-out;
+  border: 1px solid black;
+  font-size: 35px;
+  border-radius: 50%;
+}
+
+a:hover .arrow-icon {
+  transform: translateX(5px); /* Move the arrow to the right on hover */
+}
 .card_link{
   margin-right: 10px;
   display: inline-block;
-  font-size: 25px;
+  font-size: 35px;
 }
 .card_link i{
-  color:rgb(126, 255, 225);
+  color: black;
   border-radius: 50%;
   box-shadow: 2px 2px 2px 1px rgb(0 0 0 / 20%);
 
+}
+/* GitHub Icon Animation */
+.github-icon {
+  font-size: 35px; /* Adjust size as needed */
+  color: #333; /* Default color */
+  transition: transform 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.tech-stack-item{
+  padding: 6px 10px;
+  border-radius: 7px;
+  background-color: #000000b6;
+  color: white;
+  margin-right: 5px;
+}
+a:hover .github-icon {
+  transform: scale(1.2); /* Scale up on hover */
+  color: #6e5494; /* GitHub's brand color */
 }
 @media (max-width:800px){
   .card_link{

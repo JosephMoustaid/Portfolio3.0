@@ -27,12 +27,24 @@
 
 @import './3.components/blogCard.scss';
 @import './3.components/hero-animation.scss';
+@import './3.components/SpotLightCard.scss';
 
 @import './4.layout/morphing-background.scss';
 
 @import './5.pages/project.scss';
 @import './5.pages/blog.scss';
+@import './5.pages/about.scss';
+
 
 @import './7.vendor/sparks.scss';
 @import './7.vendor/custom-cursor.scss';
 @import './7.vendor/animtations.scss';
+
+
+@import './3.components/loader.scss';
+
+@keyframes rotate {
+    100% {
+      transform: rotate(360deg);
+    }
+  }

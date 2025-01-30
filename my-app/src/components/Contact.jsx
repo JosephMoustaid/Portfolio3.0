@@ -1,5 +1,6 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser'; // Import EmailJS
 import useInView from '../hooks/useInView'; // Custom hook to detect visibility
 import contactImg from '../assets/images/contact.avif';
 
@@ -9,6 +10,10 @@ const Contact = () => {
     email: '',
     message: '',
   });
+
+  const [isSending, setIsSending] = useState(false); // Track sending state
+  const [isSent, setIsSent] = useState(false); // Track if the email was sent
+  const [error, setError] = useState(null); // Track errors
 
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, 0.2); // Track visibility
@@ -21,10 +26,29 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
-    alert('Thank you for your message!');
+    setIsSending(true); // Set sending state to true
+    setError(null); // Reset error state
+
+    try {
+      // Send the email using EmailJS
+      await emailjs.send(
+        'service_zayc11f', // Replace with your EmailJS Service ID
+        'template_oy1fymj', // Replace with your EmailJS Template ID
+        formData,
+        '1oS4zcv-TOhP2Vwoz' // Replace with your EmailJS User ID
+      );
+
+      setIsSent(true); // Set sent state to true
+      alert('Thank you for your message!'); // Notify the user
+      setFormData({ name: '', email: '', message: '' }); // Clear the form
+    } catch (err) {
+      setError('Failed to send the message. Please try again.'); // Handle errors
+      console.error('Error sending email:', err);
+    } finally {
+      setIsSending(false); // Reset sending state
+    }
   };
 
   return (
@@ -86,9 +110,12 @@ const Contact = () => {
               <button
                 type="submit"
                 className="btn btn-primary btn-hover-effect" // Apply button hover effect class
+                disabled={isSending} // Disable the button while sending
               >
-                Send Message
+                {isSending ? 'Sending...' : 'Send Message'}
               </button>
+              {error && <p className="error-message">{error}</p>}
+              {isSent && <p className="success-message">Message sent successfully!</p>}
             </form>
           </div>
         </div>
@@ -97,7 +124,7 @@ const Contact = () => {
       <div className="contact-info">
         <p>
           You can also reach me at{' '}
-          <a href="moustaidbusiness@gmail.com">moustaidbusiness@gmail.com</a>
+          <a href="mailto:moustaidbusiness@gmail.com">moustaidbusiness@gmail.com</a>
         </p>
         <p>
           Or connect with me on{' '}
@@ -116,4 +143,3 @@ const Contact = () => {
 };
 
 export default Contact;
-
