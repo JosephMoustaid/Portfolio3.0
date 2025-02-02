@@ -27,7 +27,7 @@ function TechStack() {
       className={`contact-section section-animation ${isInView ? 'visible' : ''}`} // Add class dynamically
     >
     <section id="techStack" className="w-75 m-auto text-center">
-      <div className="medium-spacing">
+      <div className="medium-spacing" id='techstack'>
         <motion.h2 className="home__titles sec-title about__titles--tiltle scroll ">My Expertise.</motion.h2>
         <motion.h4 className="home__titles sec-title__helper scroll mb-2 ">Technologies I have been working with recently</motion.h4>
         <div className="row medium-spacing ">

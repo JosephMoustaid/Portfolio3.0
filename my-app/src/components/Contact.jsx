@@ -56,8 +56,8 @@ const Contact = () => {
       ref={sectionRef}
       className={`contact-section section-animation ${isInView ? 'visible' : ''}`} // Add class dynamically
     >
-      <motion.h2 className="sec-title">Get in Touch</motion.h2>
-      <div className="container">
+      <motion.h2 className="sec-title" id='contact'>Get in Touch</motion.h2>
+      <div className="container" >
         <div className="row">
           <div className="col-12 col-md-6">
             <div className="p-2 contact-helper">

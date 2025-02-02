@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import projectsData from "../projectsData/all";
 
 function Projects() {
@@ -50,8 +51,7 @@ function Projects() {
             >
               <div
                 className="card__background"
-
-                style={{ backgroundImage: `url(${project.images[0]})`, opacity : 0.8}}
+                style={{ backgroundImage: `url(${project.images[0]})`, opacity: 0.8 }}
               ></div>
               <div className="card__content">
                 <h3 className="card__category">{project.title}</h3>
@@ -61,7 +61,7 @@ function Projects() {
                   ))}
                 </h4>
                 <div className="card__heading-helper card_link">
-                  <a href={"/project/" + project.title} rel="noopener noreferrer">
+                  <Link to={"/project/" + project.title} rel="noopener noreferrer">
                     {/* Custom Animated Arrow */}
                     <svg
                       className="arrow-icon"
@@ -86,7 +86,7 @@ function Projects() {
                         strokeLinejoin="round"
                       />
                     </svg>
-                  </a>
+                  </Link>
                 </div>
                 <div className="card__heading-helper card_link">
                   <a href={project.githubLink} target="_blank" rel="noopener noreferrer">

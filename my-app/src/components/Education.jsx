@@ -6,19 +6,41 @@ function Education() {
     {
       degree: 'High School Degree',
       year: '2018 - 2022',
-      description: 'Focused on foundational computer science and mathematics, participating in coding competitions and extracurricular activities.',
+      description: 'Graduated with a focus on mathematics, physics, and computer science, actively participating in coding clubs and extracurricular activities.',
     },
     {
-      degree: 'Bachelor\'s Degree in Computer Science',
+      degree: 'Bachelor\'s Degree in Software Engineering',
       year: '2022 - 2026',
-      description: 'Studied advanced algorithms, software engineering, and AI. Worked on projects including a machine learning model for data analysis.',
+      description: 'Pursuing a degree in Software Engineering, focusing on full-stack development, algorithms, data structures, and software architecture. Currently working on several projects, including a WebXR immersive platform and a MERN stack-based web application.',
     },
     {
-      degree: 'Master\'s Degree in Software Engineering',
+      degree: 'Master\'s Degree in Software Engineering (Planned)',
       year: '2026 - 2028',
-      description: 'Specialized in system architecture and cloud computing, completing a thesis on distributed systems optimization.',
+      description: 'Intending to specialize in system architecture, cloud computing, and AI-driven software design. Planned focus on optimization techniques for large-scale distributed systems.',
     },
   ];
+  
+  const experience = [
+    {
+      role: 'Software Engineering Intern',
+      year: 'Summer 2022',
+      company: '2WLS',
+      description: 'Worked on the improvement of 2WLS platform using React, contributing to the Digital marketing strategy of the plateform. Focused on a study of the competition in the market and the research for innovative techniques.',
+    },
+    {
+      role: 'Freelance Web Developer',
+      year: '2023 - Present',
+      company: 'Self-Employed',
+      description: 'Freelancing as a full-stack developer, building web applications using React, Node.js, and MongoDB. Created an immersive course editor and LMS platform, working with 3D models and integrating PDF and video content into virtual environments.',
+    },
+    {
+      role: 'Project Lead: "Immerse" Web Platform',
+      year: '2024',
+      company: 'Laboratory of research and innovation',
+      description: 'Led the development of a WebXR-based immersive platform ("Immerse") as part of an academic project. Integrated 3D models, interactive annotations, and dynamic content management into the platform, utilizing full-stack web development skills.',
+    },
+  ];
+  
 
   // Animation variants for timeline and timeline items
   const timelineVariants = {
@@ -78,7 +100,7 @@ function Education() {
               initial="hidden"
               animate={isInView ? 'visible' : 'hidden'}
             >
-              {education.map((edu, index) => (
+              {experience.map((exp, index) => (
                 <motion.div
                   className="timeline-item"
                   key={index}
@@ -86,9 +108,10 @@ function Education() {
                 >
                   <div className="timeline-dot"></div>
                   <div className="timeline-content">
-                    <p className="year blue">{edu.year}</p>
-                    <h3 className="degree">{edu.degree}</h3>
-                    <p className="description">{edu.description}</p>
+                    <p className="year blue">{exp.year}</p>
+                    <h3 className="degree"><b>{exp.company}</b></h3>
+                    <h3 className="degree">{exp.degree}</h3>
+                    <p className="description">{exp.description}</p>
                   </div>
                 </motion.div>
               ))}

@@ -46,17 +46,17 @@ function Skills() {
 
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, 0.2); // Track visibility
-
+  
   // Duplicate the techStacks array to create a seamless loop
   const duplicatedTechStacks = [...techStacks, ...techStacks];
 
   return (
     <motion.section
       ref={sectionRef}
-      className={`contact-section section-animation ${isInView ? 'visible' : ''}`} // Add class dynamically
+      className={`contact-section section-animation visible ${isInView ? 'visible' : ''}`} // Add class dynamically
     >
       <section id="skills-section" className="skills-section">
-        <div className="container " style={{ marginTop: '15%' }}>
+        <div className="container skills" style={{ marginTop: '15%' }}>
           <div className="skills-title text-center section-title">
             <motion.h2 className="home__titles sec-title about__titles--tiltle scroll ">Skills.</motion.h2>
             <motion.h4 className="home__titles sec-title__helper scroll mb-2 ">Tech stacks I work with</motion.h4>
@@ -76,7 +76,7 @@ function Skills() {
               }}
             >
               {duplicatedTechStacks.map((stack, index) => (
-                <div className="col-12 col-md-6 col-lg-4 mb-4 me-4 d-inline-block" key={index} style={{ width: '25%' }}>
+                <div className="col-12 col-md-6 col-lg-4 mb-4 me-4 d-inline-block skills-card-container" key={index} >
                   {/* Wrap the card with SpotlightCard */}
                   <SpotlightCard spotlightColor="rgba(255, 255, 255, 0.25)">
                     <div className="card tech-card">

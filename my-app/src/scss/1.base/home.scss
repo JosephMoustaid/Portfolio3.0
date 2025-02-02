@@ -24,6 +24,7 @@
     @media (max-width: 768px) {
       left : 15px;
     }
+
   }
   
   .fixed-left ul, .fixed-right ul {
@@ -39,6 +40,9 @@
   
   .fixed-left li a {
     text-decoration: none; /* Remove underline */
+    :hover {
+      color: #64ffda !important;
+    }
   }
   
   

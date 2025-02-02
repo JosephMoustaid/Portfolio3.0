@@ -2,7 +2,22 @@ import React from 'react';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import '../css/style.css'; // Ensure your SCSS is compiled into CSS and imported properly.
 
+import { Link } from 'react-router-dom';
+import {useLocation } from 'react-router-dom';
+
+
 function Footer() {
+
+
+  const location = useLocation();
+
+  const handleInternalLink = (e, target) => {
+    if (location.pathname === '/') {
+      e.preventDefault();
+      document.getElementById(target).scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <footer id="footer" className="bd-footer content h-50 ">
       <div className="container">
@@ -19,7 +34,7 @@ function Footer() {
               </li>
               <li className="mb-2 d-inline-block">
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/youssef-moustaid-71013a240?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bpo6WFMZATsiUzASxCRvzfw%3D%3D"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-icon-link"
@@ -29,7 +44,7 @@ function Footer() {
               </li>
               <li className="mb-2 d-inline-block">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/JosephMoustaid"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-icon-link"
@@ -39,7 +54,7 @@ function Footer() {
               </li>
               <li className="mb-2 d-inline-block">
                 <a
-                  href="https://codepen.io"
+                  href="https://codepen.io/Youssef-Moustaid"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-icon-link"
@@ -57,9 +72,12 @@ function Footer() {
                   <i className="bi bi-facebook px-2 py-1 m-auto social-icon"></i>
                 </a>
               </li>
+
+
+              
               <li className="d-inline-block">
                 <a
-                  href="https://twitter.com"
+                  href="https://x.com/Yousmalou84541"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="social-icon-link"
@@ -76,12 +94,11 @@ function Footer() {
               <li>
                 <h4 className="sec-title about__titles--tiltle">Resources</h4>
               </li>
-              <li><a href="#home" className="info">Home</a></li>
-              <li><a href="#techStack" className="info">TechStack</a></li>
-              <li><a href="#projects" className="info">Projects</a></li>
-              <li><a href="#experience" className="info">Experience</a></li>
-              <li><a href="#About" className="info">About</a></li>
-              <li><a href="#Services" className="info">Services</a></li>
+              <li><Link to="/" className="info" aria-current="page">Home</Link> </li>
+              <li><Link to="/" className="info" aria-current="page" onClick={(e) => handleInternalLink(e, 'techstack')}>TechStack</Link></li>
+              <li><Link to="/" className="info" aria-current="page" onClick={(e) => handleInternalLink(e, 'projects')}>Projects</Link></li>
+              <li><Link to="/about" className="info" aria-current="page" >About</Link></li>
+              <li><Link to="/" className="info" aria-current="page" onClick={(e) => handleInternalLink(e, 'services')}>Services</Link></li>
               <li><a href="mailto:MoustaidYoussef@emsi-edu.ma" className="info">Contact</a></li>
             </ul>
           </div>
@@ -90,7 +107,7 @@ function Footer() {
       </div>
       {/* Footer Bottom */}
       <div className="grey-bg rounded-top-2 text-center w-100 py-2">
-        &copy; Copyright 2023. 
+        &copy; Copyright 2025. 
         <span>
           Developed by <span>Youssef Moustaid</span>. <br />
         </span>

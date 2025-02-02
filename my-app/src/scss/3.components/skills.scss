@@ -1,81 +1,136 @@
 #skills-section {
-    margin-top: 8%;
-    .skills-title {
-      margin-bottom: 40px;
-      h2 {
-        font-size: 2.5rem;
-        color: #fff;
-      }
-    }
-  
-    @media (min-width:380px) and (max-width: 768px) {
-      padding-left: 50px;
-      padding-right: 50px;
-    }
-    @media(max-width: 379px) {
-      padding-left: 30px;
-      padding-right: 30px;
-    }
-    .tech-card {
-      background: transparent;
-      border: none;
-      border-radius: 12px;
-      //box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      position: relative;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-  
-      &:before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border-radius: 12px;
-        box-shadow: 0 0 20px #6FFFC8, 0 0 40px #6FFFC8, 0 0 60px #6FFFC8, 0 0 80px #6FFFC8;
-        animation: glow 2s infinite;
-        z-index: -1;
-      }
-  
+  margin-top: 8%;
 
-      .tech-icon {
-        height: 100px;
-        width: 100px;
-        margin: 20px auto;
-        display: block;
-      }
-  
-      .card-body {
-        text-align: center;
-        color: #ccc;
-  
-        .card-title {
-          font-size: 1.5rem;
-          margin-bottom: 10px;
-        }
-  
-        .card-text {
-          font-size: 1rem;
-          margin-bottom: 10px;
-          
-        }
-  
-        .text-muted {
-          color: #dbdbdbdd;
-        }
-      }
+  .skills-title {
+    margin-bottom: 40px;
+
+    h2 {
+      font-size: 2.5rem;
+      color: #fff;
+
+      
     }
-  
-    @keyframes glow {
-      0% {
-        box-shadow: 0 0 20px #6FFFC8, 0 0 40px #6FFFC8, 0 0 60px #6FFFC8, 0 0 80px #6FFFC8;
+    @media (max-width: 860px) {
+      margin-top: 350px;
+      margin-bottom: 150px;
+    }
+  }
+
+  @media (min-width: 380px) and (max-width: 768px) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  @media (max-width: 379px) {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .skills-card-container {
+    @media (min-width: 1000px) {
+      width: 25%; 
+    }
+    @media (min-width: 769px) and (max-width: 999px) {
+      width: 45%; // Full width for grid layout
+      margin-top: 50px;
+    }
+    @media (max-width: 768px) {
+      width: 85%; // Full width for grid layout
+    }
+  }
+
+  .tech-card {
+    background: transparent;
+    border: none;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 12px;
+      box-shadow: 0 0 20px #6FFFC8, 0 0 40px #6FFFC8, 0 0 60px #6FFFC8, 0 0 80px #6FFFC8;
+      animation: glow 2s infinite;
+      z-index: -1;
+    }
+
+    .tech-icon {
+      height: 100px;
+      width: 100px;
+      margin: 20px auto;
+      display: block;
+    }
+
+    .card-body {
+      text-align: center;
+      color: #ccc;
+
+      .card-title {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
       }
-      50% {
-        box-shadow: 0 0 40px #6FFFC8, 0 0 60px #6FFFC8, 0 0 80px #6FFFC8, 0 0 100px #6FFFC8;
+
+      .card-text {
+        font-size: 1rem;
+        margin-bottom: 10px;
       }
-      100% {
-        box-shadow: 0 0 20px #6FFFC8, 0 0 40px #6FFFC8, 0 0 60px #6FFFC8, 0 0 80px #6FFFC8;
+
+      .text-muted {
+        color: #dbdbdbdd;
       }
     }
   }
+
+  @keyframes glow {
+    0% {
+      box-shadow: 0 0 20px #6FFFC8, 0 0 40px #6FFFC8, 0 0 60px #6FFFC8, 0 0 80px #6FFFC8;
+    }
+    50% {
+      box-shadow: 0 0 40px #6FFFC8, 0 0 60px #6FFFC8, 0 0 80px #6FFFC8, 0 0 100px #6FFFC8;
+    }
+    100% {
+      box-shadow: 0 0 20px #6FFFC8, 0 0 40px #6FFFC8, 0 0 60px #6FFFC8, 0 0 80px #6FFFC8;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .row {
+      display: grid;
+      grid-template-columns: 1fr; // 1 column for smaller screens
+      gap: 20px; // Adjust the gap as needed
+      overflow: visible; // Remove overflow for grid layout
+      white-space: normal; // Reset white-space
+    }
+
+    .slider {
+      display: contents; // Remove the slider layout
+    }
+
+    .col-12 {
+      width: 100%; // Full width for grid items
+    }
+  }
+  @media (min-width: 769px) and (max-width: 999px) {
+    .row {
+      display: grid;
+      grid-template-columns: 1fr; // 2 columns for smaller screens
+      gap: 20px; // Adjust the gap as needed
+      overflow: visible; // Remove overflow for grid layout
+      white-space: normal; // Reset white-space
+    }
+
+    .slider {
+      display: contents; // Remove the slider layout
+    }
+
+    .col-12 {
+      width: 100%; // Full width for grid items
+    }
+  }
+}

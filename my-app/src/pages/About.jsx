@@ -6,8 +6,6 @@ import MorphingBackground from '../effects/MorphingBackground';
 import CustomCursor from '../utilities/CustomCursor';
 import { FaArrowRight } from "react-icons/fa";
 
-import '../css/style.css';
-
 function About() {
   const [openSection, setOpenSection] = useState('who-am-i');
 
@@ -37,10 +35,10 @@ function About() {
       {/* Fixed Social Links */}
       <div className="fixed-left">
         <ul>
-          <li><a href="." className='cyan-link'><i className="bi bi-linkedin"></i></a></li>
-          <li><a href="." className='cyan-link'><i className="bi bi-github"></i></a></li>
-          <li><a href="." className='cyan-link'><i className="bi bi-braces"></i></a></li>
-          <li className='mb-0'><span></span></li>
+        <li><a href="https://www.linkedin.com/in/youssef-moustaid-71013a240?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3Bpo6WFMZATsiUzASxCRvzfw%3D%3D" className='cyan-link'  ><i className="bi bi-linkedin"></i></a></li> 
+            <li><a href="https://github.com/JosephMoustaid" className='cyan-link'  ><i className="bi bi-github"></i></a></li>
+            <li><a href="https://www.hackerrank.com/profile/josephjoestar" className='cyan-link'><i className="bi bi-braces"></i></a></li>
+            <li className='mb-0'><span></span></li>
         </ul>
       </div>
 
